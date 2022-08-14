@@ -1,6 +1,6 @@
 ﻿namespace BSTU.RequestsScheduler.Interactor.Configuration
 {
-    internal class BusStopConfiguration
+    public class BusStopConfiguration
     {
         private string? _name;
 
