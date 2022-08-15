@@ -2,7 +2,7 @@
 
 namespace BSTU.RequestsScheduler.Interactor.Factories
 {
-    public interface IRequestsFactory
+    public interface IRequestFactory
     {
         public Request Create(string name);
     }
