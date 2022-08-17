@@ -1,7 +1,7 @@
 ﻿using BSTU.RequestsScheduler.Interactor.Configuration;
 using BSTU.RequestsScheduler.Interactor.Factories;
 using BSTU.RequestsScheduler.Interactor.Models;
-using BSTU.RequestsScheduler.Interactor.Tests.Factories.TestData;
+using BSTU.RequestsScheduler.Interactor.Tests.TestData;
 using BSTU.RequestsScheduler.Interactor.Tests.Utils;
 using Moq;
 

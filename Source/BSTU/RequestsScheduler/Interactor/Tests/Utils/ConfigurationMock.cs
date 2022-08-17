@@ -88,11 +88,6 @@ namespace BSTU.RequestsScheduler.Interactor.Tests.Utils
             return timePeriods;
         }
 
-        private static DateTime CreateDateTimeFromHour(int hour)
-        {
-            return new DateTime(DateTime.Now.Year, 1, 1, hour, 0, 0);
-        }
-
         public static IEnumerable<BusStopConfiguration> EmptyConfiguration => new List<BusStopConfiguration>();
     }
 }

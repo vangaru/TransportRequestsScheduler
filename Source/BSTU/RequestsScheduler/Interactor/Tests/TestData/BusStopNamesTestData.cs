@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using BSTU.RequestsScheduler.Interactor.Tests.Utils;
 
-namespace BSTU.RequestsScheduler.Interactor.Tests.Factories.TestData
+namespace BSTU.RequestsScheduler.Interactor.Tests.TestData
 {
     public class BusStopNamesTestData : IEnumerable<object[]>
     {
