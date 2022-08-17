@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interactors\" />
     <Folder Include="Presentators\" />
   </ItemGroup>
 

@@ -4,11 +4,11 @@ namespace BSTU.RequestsScheduler.Interactor.Tests.Utils
 {
     internal static class ConfigurationMock
     {
-        private const int MinDailyRequestsCount = 30;
-        private const int MaxDailyRequestsCount = 500;
-
         private static readonly Random _random = new();
-        
+
+        public const int MinDailyRequestsCount = 30;
+        public const int MaxDailyRequestsCount = 500;
+
         public static readonly List<string> BusStopNames = new()
         {
             "Stop1",
