@@ -3,17 +3,18 @@ using BSTU.RequestsScheduler.Interactor.Configuration;
 
 namespace BSTU.RequestsScheduler.Configuration.Configuration
 {
-    public class RequestConfiguration : IRequestConfigurationProxy
+    public class RequestConfiguration : RequestConfigurationBase
     {
         private readonly string _configurationFilePath;
-        private readonly IRequestConfigurationValidator _validator;
 
-        public RequestConfiguration(string configurationFilePath, IRequestConfigurationValidator validator)
+        public RequestConfiguration(string configurationFilePath, IRequestConfigurationValidator validator) : base(validator)
         {
             _configurationFilePath = configurationFilePath;
-            _validator = validator;
         }
 
-        public IEnumerable<BusStopConfiguration> Configuration => throw new NotImplementedException();
+        protected override IEnumerable<BusStopConfiguration> RetrieveConfiguration()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
