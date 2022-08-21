@@ -5,7 +5,7 @@ namespace BSTU.RequestsScheduler.Configuration.Validators
 {
     public class RequestConfigurationValidator : IRequestConfigurationValidator
     {
-        public RequestValidationException? Validate(IEnumerable<BusStopConfiguration> confiugration, out bool result)
+        public RequestValidationException? Validate(IEnumerable<BusStopConfiguration> confiugration, out bool success)
         {
             throw new NotImplementedException();
         }
