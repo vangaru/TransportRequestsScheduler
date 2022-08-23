@@ -46,7 +46,7 @@ namespace BSTU.RequestsScheduler.Configuration.Tests.Utils
 
             foreach (string name in BusStopNames)
             {
-                busStopConfiguration.Add(busStopConfigurationGenerator(name, ValidTimePeriods));
+                busStopConfiguration.Add(busStopConfigurationGenerator(name, timePeriods.ToList()));
             }
 
             return busStopConfiguration;
@@ -58,7 +58,7 @@ namespace BSTU.RequestsScheduler.Configuration.Tests.Utils
             {
                 Name = name,
                 DailyRequestsCount = _random.Next(MinDailyRequestsCount, MaxDailyRequestsCount),
-                TimePeriods = ValidTimePeriods
+                TimePeriods = timePeriods
             };
 
             return busStopConfiguration;
@@ -172,7 +172,7 @@ namespace BSTU.RequestsScheduler.Configuration.Tests.Utils
                     {
                         From = DateTime.Parse("00:00:00"),
                         To = DateTime.Parse("06:59:59"),
-                        RequestsCountCoefficient = 0.05f
+                        RequestsCountCoefficient = 0.5f
                     },
                     new TimePeriod
                     {

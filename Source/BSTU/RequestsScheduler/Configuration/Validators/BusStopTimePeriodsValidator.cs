@@ -3,15 +3,8 @@ using BSTU.RequestsScheduler.Interactor.Configuration;
 
 namespace BSTU.RequestsScheduler.Configuration.Validators
 {
-    public class RequestConfigurationValidator : IRequestConfigurationValidator
+    public class BusStopTimePeriodsValidator : IRequestConfigurationValidator
     {
-        private readonly IEnumerable<IRequestConfigurationValidator> _validators;
-
-        public RequestConfigurationValidator(IEnumerable<IRequestConfigurationValidator> validators)
-        {
-            _validators = validators;
-        }
-
         public RequestValidationException? Validate(IEnumerable<BusStopConfiguration> configuration, out bool success)
         {
             throw new NotImplementedException();
