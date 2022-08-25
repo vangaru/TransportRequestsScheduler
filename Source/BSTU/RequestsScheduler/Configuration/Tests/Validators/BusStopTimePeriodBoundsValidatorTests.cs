@@ -5,28 +5,29 @@ using BSTU.RequestsScheduler.Interactor.Configuration;
 
 namespace BSTU.RequestsScheduler.Configuration.Tests.Validators
 {
-    public class BusStopsCountValidatorTests
+    public class BusStopTimePeriodBoundsValidatorTests
     {
-        private readonly BusStopsCountValidator _validator = new();
+        private readonly BusStopTimePeriodBoundsValidator _validator = new();
 
         public static IEnumerable<object[]> ValidInputData => new List<object[]>
         {
             new[] { ConfigurationMock.ValidConfiguration },
-            new[] { ConfigurationMock.ConfigurationWithCrossTimePeriods },
-            new[] { ConfigurationMock.ConfigurationWithEmptyTimePeriods },
-            new[] { ConfigurationMock.ConfigurationWithTimePeriodsWhichDontCoverDaily24hInterval },
             new[] { ConfigurationMock.ConfigurationWithDailyRequestsCountLessThan1 },
-            new[] { ConfigurationMock.ConfigurationWithRepeatedNames }
+            new[] { ConfigurationMock.ConfigurationWithRepeatedNames },
+            new[] { ConfigurationMock.EmptyConfiguration },
+            new[] { ConfigurationMock.ConfigurationWithTimePeriodsWhichDontCoverDaily24hInterval },
+            new[] { ConfigurationMock.ConfigurationWithEmptyTimePeriods },
+            new[] { ConfigurationMock.ConfigurationWithCrossTimePeriods }
         };
 
         public static IEnumerable<object[]> InvalidInputData => new List<object[]>
         {
-            new[] { ConfigurationMock.EmptyConfiguration },
+            new[] { ConfigurationMock.ConfigurationWithInvalidTimePeriodBounds }
         };
 
         [Theory]
         [MemberData(nameof(ValidInputData))]
-        public void Validate_BusStopsCountGreaterOrEqual2_ReturnsTrueWithoutExceptions(IEnumerable<BusStopConfiguration> configuration)
+        public void Validate_FromBoundLessOrEqualToBound_ReturnsTrueWithoutExceptions(IEnumerable<BusStopConfiguration> configuration)
         {
             RequestValidationException? validationException = _validator.Validate(configuration, out bool success);
             Assert.Null(validationException);
@@ -35,7 +36,7 @@ namespace BSTU.RequestsScheduler.Configuration.Tests.Validators
 
         [Theory]
         [MemberData(nameof(InvalidInputData))]
-        public void Validate_BusStopsCountLessThan2_ReturnsFalseWithExceptions(IEnumerable<BusStopConfiguration> configuration)
+        public void Validate_ToBoundLessOrEqualFromBound_ReturnsFalseWithExceptions(IEnumerable<BusStopConfiguration> configuration)
         {
             RequestValidationException? validationException = _validator.Validate(configuration, out bool success);
             Assert.NotNull(validationException);

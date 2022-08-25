@@ -22,8 +22,12 @@
         private const string TimePeriodsCrossedMessage =
             "Time Periods for {0} bus stop are crossed";
 
-        private const string TimePeriodsDoNotCover24hInterval =
-            "Time Periods for {0} bus stop do not cover 24 hours interval";
+        private const string TimePeriodsDoNotCover24hIntervalMessage =
+            "Time Periods for {0} bus stop do not cover 24 hours interval.";
+
+        private const string IncorrectTimePeriodBoundsMessage =
+            "Time Period ({0} - {1}) for {2} bus stop has incorrect bounds. " +
+            "To must be greater than From.";
 
         public static string GetDailyRequestsCountLessThanOneMessage(int requestsCount, string busStopName)
         {
@@ -52,7 +56,12 @@
 
         public static string GetTimePeriodsDoNotCover24hIntervalMessage(string busStopName)
         {
-            return GetValidationMessage(TimePeriodsDoNotCover24hInterval, busStopName);
+            return GetValidationMessage(TimePeriodsDoNotCover24hIntervalMessage, busStopName);
+        }
+
+        public static string GetInvalidTimePeriodBoundsMessage(string busStopName, TimeSpan fromBound, TimeSpan toBound)
+        {
+            return GetValidationMessage(IncorrectTimePeriodBoundsMessage, busStopName, fromBound, toBound);
         }
 
         private static string GetValidationMessage(string message, params object[] parameters)

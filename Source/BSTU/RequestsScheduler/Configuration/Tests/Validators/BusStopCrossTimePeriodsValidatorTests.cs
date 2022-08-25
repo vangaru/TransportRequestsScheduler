@@ -5,23 +5,23 @@ using BSTU.RequestsScheduler.Interactor.Configuration;
 
 namespace BSTU.RequestsScheduler.Configuration.Tests.Validators
 {
-    public class BusStopTimePeriodsValidatorTests
+    public class BusStopCrossTimePeriodsValidatorTests
     {
-        private readonly BusStopTimePeriodsValidator _validator = new();
+        private readonly BusStopCrossTimePeriodsValidator _validator = new();
 
         public static IEnumerable<object[]> ValidInputData => new List<object[]>
         {
             new[] { ConfigurationMock.ValidConfiguration },
             new[] { ConfigurationMock.ConfigurationWithDailyRequestsCountLessThan1 },
-            new[] { ConfigurationMock.ConfigurationWithRepeatedNames }
+            new[] { ConfigurationMock.ConfigurationWithRepeatedNames },
+            new[] { ConfigurationMock.EmptyConfiguration },
+            new[] { ConfigurationMock.ConfigurationWithTimePeriodsWhichDontCoverDaily24hInterval },
+            new[] { ConfigurationMock.ConfigurationWithEmptyTimePeriods }
         };
 
         public static IEnumerable<object[]> InvalidInputData => new List<object[]>
         {
-            new[] { ConfigurationMock.EmptyConfiguration },
-            new[] { ConfigurationMock.ConfigurationWithCrossTimePeriods },
-            new[] { ConfigurationMock.ConfigurationWithEmptyTimePeriods },
-            new[] { ConfigurationMock.ConfigurationWithTimePeriodsWhichDontCoverDaily24hInterval },
+            new[] { ConfigurationMock.ConfigurationWithCrossTimePeriods }
         };
 
         [Theory]
@@ -34,7 +34,7 @@ namespace BSTU.RequestsScheduler.Configuration.Tests.Validators
         }
 
         [Theory]
-        [MemberData(nameof(ValidInputData))]
+        [MemberData(nameof(InvalidInputData))]
         public void Validate_InvalidTimePeriods_ReturnsFalseWithExceptions(IEnumerable<BusStopConfiguration> configuration)
         {
             RequestValidationException? validationException = _validator.Validate(configuration, out bool success);

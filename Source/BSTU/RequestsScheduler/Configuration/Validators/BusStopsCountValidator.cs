@@ -5,9 +5,18 @@ namespace BSTU.RequestsScheduler.Configuration.Validators
 {
     public class BusStopsCountValidator : IRequestConfigurationValidator
     {
-        public RequestValidationException? Validate(IEnumerable<BusStopConfiguration> configuration, out bool success)
+        private const int MinBusStopsCount = 2;
+
+        public RequestValidationException? Validate(IEnumerable<BusStopConfiguration> configuration, 
+            out bool success)
         {
-            throw new NotImplementedException();
+            int busStopsCount = configuration.Count();
+            success = busStopsCount >= MinBusStopsCount;
+
+            return success
+                ? null
+                : new RequestValidationException(
+                    ValidationMessage.GetBusStopsCountLessThanTwoMessage(busStopsCount));
         }
     }
 }

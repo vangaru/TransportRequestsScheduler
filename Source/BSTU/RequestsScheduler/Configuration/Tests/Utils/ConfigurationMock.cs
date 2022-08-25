@@ -23,21 +23,32 @@ namespace BSTU.RequestsScheduler.Configuration.Tests.Utils
             "Stop10"
         };
 
-        public static IEnumerable<BusStopConfiguration> ValidConfiguration => GenerateConfiguration(ValidTimePeriods, GenerateBusStopConfiguration);
+        public static IEnumerable<BusStopConfiguration> ValidConfiguration 
+            => GenerateConfiguration(ValidTimePeriods, GenerateBusStopConfiguration);
 
-        public static IEnumerable<BusStopConfiguration> ConfigurationWithEmptyTimePeriods => GenerateConfiguration(EmptyTimePeriods, GenerateBusStopConfiguration);
+        public static IEnumerable<BusStopConfiguration> ConfigurationWithEmptyTimePeriods 
+            => GenerateConfiguration(EmptyTimePeriods, GenerateBusStopConfiguration);
 
-        public static IEnumerable<BusStopConfiguration> ConfigurationWithRepeatedNames => ValidConfiguration.Concat(ValidConfiguration);
+        public static IEnumerable<BusStopConfiguration> ConfigurationWithRepeatedNames 
+            => ValidConfiguration.Concat(ValidConfiguration);
 
-        public static IEnumerable<BusStopConfiguration> EmptyConfiguration => new List<BusStopConfiguration>();
+        public static IEnumerable<BusStopConfiguration> EmptyConfiguration 
+            => new List<BusStopConfiguration>();
 
-        public static IEnumerable<BusStopConfiguration> ConfigurationWithCrossTimePeriods => GenerateConfiguration(CrossTimePeriods, GenerateBusStopConfiguration);
+        public static IEnumerable<BusStopConfiguration> ConfigurationWithCrossTimePeriods 
+            => GenerateConfiguration(CrossTimePeriods, GenerateBusStopConfiguration);
 
-        public static IEnumerable<BusStopConfiguration> ConfigurationWithTimePeriodsWhichDontCoverDaily24hInterval => GenerateConfiguration(TimePeriodsWhichDontCoverDaily24hInterval, GenerateBusStopConfiguration);
+        public static IEnumerable<BusStopConfiguration> ConfigurationWithTimePeriodsWhichDontCoverDaily24hInterval 
+            => GenerateConfiguration(TimePeriodsWhichDontCoverDaily24hInterval, GenerateBusStopConfiguration);
 
-        public static IEnumerable<BusStopConfiguration> ConfigurationWithSummaryRequestsCoefficientMoreThan1 => GenerateConfiguration(TimePeriodsWithSummaryRequestsCountCoefficientMoreThan1, GenerateBusStopConfiguration);
+        public static IEnumerable<BusStopConfiguration> ConfigurationWithSummaryRequestsCoefficientMoreThan1 
+            => GenerateConfiguration(TimePeriodsWithSummaryRequestsCountCoefficientMoreThan1, GenerateBusStopConfiguration);
 
-        public static IEnumerable<BusStopConfiguration> ConfigurationWithDailyRequestsCountLessThan1 => GenerateConfiguration(ValidTimePeriods, GenerateBusStopConfigurationWithRequestsCountLessThan1);
+        public static IEnumerable<BusStopConfiguration> ConfigurationWithDailyRequestsCountLessThan1 
+            => GenerateConfiguration(ValidTimePeriods, GenerateBusStopConfigurationWithRequestsCountLessThan1);
+
+        public static IEnumerable<BusStopConfiguration> ConfigurationWithInvalidTimePeriodBounds
+            => GenerateConfiguration(TimePeriodsWithInvalidBounds, GenerateBusStopConfiguration);
 
         private static IEnumerable<BusStopConfiguration> GenerateConfiguration(IEnumerable<TimePeriod> timePeriods, 
             Func<string, List<TimePeriod>, BusStopConfiguration> busStopConfigurationGenerator)
@@ -214,6 +225,36 @@ namespace BSTU.RequestsScheduler.Configuration.Tests.Utils
                     {
                         From = DateTime.Parse("11:00:00"),
                         To = DateTime.Parse("16:59:59"),
+                        RequestsCountCoefficient = 0.2f
+                    },
+                };
+
+                return timePeriods;
+            }
+        }
+
+        private static List<TimePeriod> TimePeriodsWithInvalidBounds
+        {
+            get
+            {
+                var timePeriods = new List<TimePeriod>
+                {
+                    new TimePeriod
+                    {
+                        To = DateTime.Parse("00:00:00"),
+                        From = DateTime.Parse("06:59:59"),
+                        RequestsCountCoefficient = 0.07f
+                    },
+                    new TimePeriod
+                    {
+                        From = DateTime.Parse("07:00:00"),
+                        To = DateTime.Parse("10:59:59"),
+                        RequestsCountCoefficient = 0.3f
+                    },
+                    new TimePeriod
+                    {
+                        To = DateTime.Parse("11:00:00"),
+                        From = DateTime.Parse("16:59:59"),
                         RequestsCountCoefficient = 0.2f
                     },
                 };
