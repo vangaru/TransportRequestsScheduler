@@ -53,7 +53,7 @@ namespace BSTU.RequestsScheduler.Configuration.Tests.Validators
             var builder = new StringBuilder();
             for (var i = 0; i < 3; i++)
             {
-                builder.Append(ValidationFailedMessage).Append('\n');
+                builder.AppendLine(ValidationFailedMessage);
             }
 
             Assert.True(builder.ToString().Equals(exception!.Message.ToString(), 
@@ -64,7 +64,7 @@ namespace BSTU.RequestsScheduler.Configuration.Tests.Validators
         public void Validate_ValidationSucceeded_OutTrueReturnsNull()
         {
             RequestValidationException? exception = _validator.Validate(
-                ConfigurationMock.EmptyConfiguration, out bool success);
+                ConfigurationMock.ValidConfiguration, out bool success);
 
             Assert.Null(exception);
             Assert.True(success);
