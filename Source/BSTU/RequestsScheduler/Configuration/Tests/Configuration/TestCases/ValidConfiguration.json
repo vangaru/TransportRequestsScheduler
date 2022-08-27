@@ -1,0 +1,112 @@
+[
+  {
+    "Name": "Stop1",
+    "DailyRequestsCount": 1000,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "06:59:59",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "07:00:00",
+        "To": "18:59:59",
+        "RequestsCountCoefficient": 0.5
+      },
+      {
+        "From": "19:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.2
+      }
+    ]
+  },
+  {
+    "Name": "Stop2",
+    "DailyRequestsCount": 1200,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "11:59:59",
+        "RequestsCountCoefficient": 0.5
+      },
+      {
+        "From": "12:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.5
+      }
+    ]
+  },
+  {
+    "Name": "Stop3",
+    "DailyRequestsCount": 1500,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "10:30:00",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "10:30:01",
+        "To": "15:59:59",
+        "RequestsCountCoefficient": 0.2
+      },
+      {
+        "From": "16:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop4",
+    "DailyRequestsCount": 900,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.8
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop5",
+    "DailyRequestsCount": 1500,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.8
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  }
+]
