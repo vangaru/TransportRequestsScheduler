@@ -24,13 +24,23 @@ namespace BSTU.RequestsScheduler.Interactor.Presentators
                 
                 foreach (string busStopName in busStopNames)
                 {
-                    var requestQueue = new Queue<Request>(requests
-                        .Where(request => request.SourceBusStopName.Equals(busStopName, StringComparison.InvariantCultureIgnoreCase)));
+                    var busStopRequests = requests
+                        .Where(request => request.SourceBusStopName.Equals(busStopName, StringComparison.InvariantCultureIgnoreCase))
+                        .ToList();
+                    busStopRequests.Sort();
+                    var requestQueue = new Queue<Request>(busStopRequests);
                     requestQueues.Add(requestQueue);
                 }
 
                 return requestQueues;
             }
+        }
+
+        public Queue<Request> GetRequestQueueForBusStop(string busStopName)
+        {
+            List<Request> requests = _requestsInteractor.GetRequestsFor(busStopName).ToList();
+            requests.Sort();
+            return new Queue<Request>(requests);
         }
     }
 }

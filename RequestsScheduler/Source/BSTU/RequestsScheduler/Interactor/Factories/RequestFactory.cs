@@ -20,7 +20,7 @@ namespace BSTU.RequestsScheduler.Interactor.Factories
         {
             var request = new Request
             {
-                Id = Guid.NewGuid().ToString(),
+                Id = Guid.NewGuid().ToString().ToUpper(),
                 SourceBusStopName = busStopName,
                 DestinationBusStopName = GetDestinationBusStopName(busStopName),
                 SeatsCount = _random.Next(MinSeatsCount, MaxSeatsCount + 1),
@@ -57,8 +57,9 @@ namespace BSTU.RequestsScheduler.Interactor.Factories
             BusStopConfiguration busStop = GetBusStopByName(busStopName);
             TimeSpan currentTime = DateTime.Now.TimeOfDay;
             TimePeriod currentTimePeriod = busStop.TimePeriods.First(timePeriod => timePeriod.From.TimeOfDay <= currentTime && timePeriod.To.TimeOfDay >= currentTime);
-            int seconds = (currentTimePeriod.To - currentTimePeriod.From).Seconds;
-            return currentTimePeriod.From.AddSeconds(_random.Next(seconds));
+            double seconds = (currentTimePeriod.To.TimeOfDay - currentTimePeriod.From.TimeOfDay).TotalSeconds;
+            var timePeriod = currentTimePeriod.From.AddSeconds(_random.Next((int)seconds));
+            return timePeriod;
         }
 
         private BusStopConfiguration GetBusStopByName(string busStopName)

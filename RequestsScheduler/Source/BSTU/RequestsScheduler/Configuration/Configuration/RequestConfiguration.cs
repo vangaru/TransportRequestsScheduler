@@ -1,5 +1,6 @@
 ﻿using BSTU.RequestsScheduler.Configuration.Validators;
 using BSTU.RequestsScheduler.Interactor.Configuration;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 
 namespace BSTU.RequestsScheduler.Configuration.Configuration
@@ -10,7 +11,15 @@ namespace BSTU.RequestsScheduler.Configuration.Configuration
 
         private readonly string _configurationFilePath;
 
-        public RequestConfiguration(string configurationFilePath, IRequestConfigurationValidator validator) : base(validator)
+        public RequestConfiguration(IOptions<ConfigurationResource> configurationOptions, 
+            IRequestConfigurationValidator validator) : base(validator)
+        {
+            _configurationFilePath = configurationOptions.Value.ConfigurationFilePath 
+                ?? throw new ApplicationException("Configuration file path is not defined");
+        }
+
+        public RequestConfiguration(string configurationFilePath, IRequestConfigurationValidator validator) 
+            : base(validator)
         {
             _configurationFilePath = configurationFilePath;
         }

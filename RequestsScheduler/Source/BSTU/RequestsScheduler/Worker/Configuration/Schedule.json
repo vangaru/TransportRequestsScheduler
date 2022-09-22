@@ -1,0 +1,1210 @@
+﻿[
+  {
+    "Name": "Stop1",
+    "DailyRequestsCount": 1000,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "06:59:59",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "07:00:00",
+        "To": "18:59:59",
+        "RequestsCountCoefficient": 0.5
+      },
+      {
+        "From": "19:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.2
+      }
+    ]
+  },
+  {
+    "Name": "Stop2",
+    "DailyRequestsCount": 1200,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "11:59:59",
+        "RequestsCountCoefficient": 0.5
+      },
+      {
+        "From": "12:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.5
+      }
+    ]
+  },
+  {
+    "Name": "Stop3",
+    "DailyRequestsCount": 1500,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "10:30:00",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "10:30:01",
+        "To": "15:59:59",
+        "RequestsCountCoefficient": 0.2
+      },
+      {
+        "From": "16:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop4",
+    "DailyRequestsCount": 900,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.8
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop5",
+    "DailyRequestsCount": 1500,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.8
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop6",
+    "DailyRequestsCount": 3000,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.05
+      },
+      {
+        "From": "06:00:00",
+        "To": "09:59:59",
+        "RequestsCountCoefficient": 0.25
+      },
+      {
+        "From": "10:00:00",
+        "To": "12:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "13:00:00",
+        "To": "14:59:59",
+        "RequestsCountCoefficient": 0.2
+      },
+      {
+        "From": "15:00:00",
+        "To": "16:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "17:00:00",
+        "To": "19:59:59",
+        "RequestsCountCoefficient": 0.25
+      },
+      {
+        "From": "20:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.05
+      }
+    ]
+  },
+  {
+    "Name": "Stop7",
+    "DailyRequestsCount": 1000,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "06:59:59",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "07:00:00",
+        "To": "18:59:59",
+        "RequestsCountCoefficient": 0.5
+      },
+      {
+        "From": "19:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.2
+      }
+    ]
+  },
+  {
+    "Name": "Stop8",
+    "DailyRequestsCount": 1200,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "11:59:59",
+        "RequestsCountCoefficient": 0.5
+      },
+      {
+        "From": "12:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.5
+      }
+    ]
+  },
+  {
+    "Name": "Stop9",
+    "DailyRequestsCount": 1500,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "10:30:00",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "10:30:01",
+        "To": "15:59:59",
+        "RequestsCountCoefficient": 0.2
+      },
+      {
+        "From": "16:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop10",
+    "DailyRequestsCount": 900,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.8
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop11",
+    "DailyRequestsCount": 1500,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.8
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop12",
+    "DailyRequestsCount": 3000,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.05
+      },
+      {
+        "From": "06:00:00",
+        "To": "09:59:59",
+        "RequestsCountCoefficient": 0.25
+      },
+      {
+        "From": "10:00:00",
+        "To": "12:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "13:00:00",
+        "To": "14:59:59",
+        "RequestsCountCoefficient": 0.2
+      },
+      {
+        "From": "15:00:00",
+        "To": "16:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "17:00:00",
+        "To": "19:59:59",
+        "RequestsCountCoefficient": 0.25
+      },
+      {
+        "From": "20:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.05
+      }
+    ]
+  },
+  {
+    "Name": "Stop13",
+    "DailyRequestsCount": 1000,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "06:59:59",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "07:00:00",
+        "To": "18:59:59",
+        "RequestsCountCoefficient": 0.5
+      },
+      {
+        "From": "19:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.2
+      }
+    ]
+  },
+  {
+    "Name": "Stop14",
+    "DailyRequestsCount": 1200,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "11:59:59",
+        "RequestsCountCoefficient": 0.5
+      },
+      {
+        "From": "12:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.5
+      }
+    ]
+  },
+  {
+    "Name": "Stop15",
+    "DailyRequestsCount": 1500,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "10:30:00",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "10:30:01",
+        "To": "15:59:59",
+        "RequestsCountCoefficient": 0.2
+      },
+      {
+        "From": "16:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop16",
+    "DailyRequestsCount": 900,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.8
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop17",
+    "DailyRequestsCount": 1500,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.8
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop18",
+    "DailyRequestsCount": 3000,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.05
+      },
+      {
+        "From": "06:00:00",
+        "To": "09:59:59",
+        "RequestsCountCoefficient": 0.25
+      },
+      {
+        "From": "10:00:00",
+        "To": "12:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "13:00:00",
+        "To": "14:59:59",
+        "RequestsCountCoefficient": 0.2
+      },
+      {
+        "From": "15:00:00",
+        "To": "16:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "17:00:00",
+        "To": "19:59:59",
+        "RequestsCountCoefficient": 0.25
+      },
+      {
+        "From": "20:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.05
+      }
+    ]
+  },
+  {
+    "Name": "Stop19",
+    "DailyRequestsCount": 1000,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "06:59:59",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "07:00:00",
+        "To": "18:59:59",
+        "RequestsCountCoefficient": 0.5
+      },
+      {
+        "From": "19:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.2
+      }
+    ]
+  },
+  {
+    "Name": "Stop20",
+    "DailyRequestsCount": 1200,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "11:59:59",
+        "RequestsCountCoefficient": 0.5
+      },
+      {
+        "From": "12:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.5
+      }
+    ]
+  },
+  {
+    "Name": "Stop21",
+    "DailyRequestsCount": 1500,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "10:30:00",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "10:30:01",
+        "To": "15:59:59",
+        "RequestsCountCoefficient": 0.2
+      },
+      {
+        "From": "16:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop22",
+    "DailyRequestsCount": 900,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.8
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop23",
+    "DailyRequestsCount": 1500,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.8
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop24",
+    "DailyRequestsCount": 3000,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.05
+      },
+      {
+        "From": "06:00:00",
+        "To": "09:59:59",
+        "RequestsCountCoefficient": 0.25
+      },
+      {
+        "From": "10:00:00",
+        "To": "12:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "13:00:00",
+        "To": "14:59:59",
+        "RequestsCountCoefficient": 0.2
+      },
+      {
+        "From": "15:00:00",
+        "To": "16:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "17:00:00",
+        "To": "19:59:59",
+        "RequestsCountCoefficient": 0.25
+      },
+      {
+        "From": "20:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.05
+      }
+    ]
+  },
+  {
+    "Name": "Stop25",
+    "DailyRequestsCount": 1000,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "06:59:59",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "07:00:00",
+        "To": "18:59:59",
+        "RequestsCountCoefficient": 0.5
+      },
+      {
+        "From": "19:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.2
+      }
+    ]
+  },
+  {
+    "Name": "Stop26",
+    "DailyRequestsCount": 1200,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "11:59:59",
+        "RequestsCountCoefficient": 0.5
+      },
+      {
+        "From": "12:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.5
+      }
+    ]
+  },
+  {
+    "Name": "Stop27",
+    "DailyRequestsCount": 1500,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "10:30:00",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "10:30:01",
+        "To": "15:59:59",
+        "RequestsCountCoefficient": 0.2
+      },
+      {
+        "From": "16:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop28",
+    "DailyRequestsCount": 900,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.8
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop29",
+    "DailyRequestsCount": 1500,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.8
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop30",
+    "DailyRequestsCount": 3000,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.05
+      },
+      {
+        "From": "06:00:00",
+        "To": "09:59:59",
+        "RequestsCountCoefficient": 0.25
+      },
+      {
+        "From": "10:00:00",
+        "To": "12:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "13:00:00",
+        "To": "14:59:59",
+        "RequestsCountCoefficient": 0.2
+      },
+      {
+        "From": "15:00:00",
+        "To": "16:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "17:00:00",
+        "To": "19:59:59",
+        "RequestsCountCoefficient": 0.25
+      },
+      {
+        "From": "20:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.05
+      }
+    ]
+  },
+  {
+    "Name": "Stop31",
+    "DailyRequestsCount": 1000,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "06:59:59",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "07:00:00",
+        "To": "18:59:59",
+        "RequestsCountCoefficient": 0.5
+      },
+      {
+        "From": "19:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.2
+      }
+    ]
+  },
+  {
+    "Name": "Stop32",
+    "DailyRequestsCount": 1200,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "11:59:59",
+        "RequestsCountCoefficient": 0.5
+      },
+      {
+        "From": "12:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.5
+      }
+    ]
+  },
+  {
+    "Name": "Stop33",
+    "DailyRequestsCount": 1500,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "10:30:00",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "10:30:01",
+        "To": "15:59:59",
+        "RequestsCountCoefficient": 0.2
+      },
+      {
+        "From": "16:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop34",
+    "DailyRequestsCount": 900,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.8
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop35",
+    "DailyRequestsCount": 1500,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.8
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop36",
+    "DailyRequestsCount": 3000,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.05
+      },
+      {
+        "From": "06:00:00",
+        "To": "09:59:59",
+        "RequestsCountCoefficient": 0.25
+      },
+      {
+        "From": "10:00:00",
+        "To": "12:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "13:00:00",
+        "To": "14:59:59",
+        "RequestsCountCoefficient": 0.2
+      },
+      {
+        "From": "15:00:00",
+        "To": "16:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "17:00:00",
+        "To": "19:59:59",
+        "RequestsCountCoefficient": 0.25
+      },
+      {
+        "From": "20:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.05
+      }
+    ]
+  },
+  {
+    "Name": "Stop37",
+    "DailyRequestsCount": 1000,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "06:59:59",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "07:00:00",
+        "To": "18:59:59",
+        "RequestsCountCoefficient": 0.5
+      },
+      {
+        "From": "19:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.2
+      }
+    ]
+  },
+  {
+    "Name": "Stop38",
+    "DailyRequestsCount": 1200,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "11:59:59",
+        "RequestsCountCoefficient": 0.5
+      },
+      {
+        "From": "12:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.5
+      }
+    ]
+  },
+  {
+    "Name": "Stop39",
+    "DailyRequestsCount": 1500,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "10:30:00",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "10:30:01",
+        "To": "15:59:59",
+        "RequestsCountCoefficient": 0.2
+      },
+      {
+        "From": "16:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop40",
+    "DailyRequestsCount": 900,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.8
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop41",
+    "DailyRequestsCount": 1500,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.8
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop42",
+    "DailyRequestsCount": 3000,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.05
+      },
+      {
+        "From": "06:00:00",
+        "To": "09:59:59",
+        "RequestsCountCoefficient": 0.25
+      },
+      {
+        "From": "10:00:00",
+        "To": "12:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "13:00:00",
+        "To": "14:59:59",
+        "RequestsCountCoefficient": 0.2
+      },
+      {
+        "From": "15:00:00",
+        "To": "16:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "17:00:00",
+        "To": "19:59:59",
+        "RequestsCountCoefficient": 0.25
+      },
+      {
+        "From": "20:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.05
+      }
+    ]
+  },
+  {
+    "Name": "Stop43",
+    "DailyRequestsCount": 1000,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "06:59:59",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "07:00:00",
+        "To": "18:59:59",
+        "RequestsCountCoefficient": 0.5
+      },
+      {
+        "From": "19:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.2
+      }
+    ]
+  },
+  {
+    "Name": "Stop44",
+    "DailyRequestsCount": 1200,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "11:59:59",
+        "RequestsCountCoefficient": 0.5
+      },
+      {
+        "From": "12:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.5
+      }
+    ]
+  },
+  {
+    "Name": "Stop45",
+    "DailyRequestsCount": 1500,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "10:30:00",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "10:30:01",
+        "To": "15:59:59",
+        "RequestsCountCoefficient": 0.2
+      },
+      {
+        "From": "16:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.3
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop46",
+    "DailyRequestsCount": 900,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.8
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop47",
+    "DailyRequestsCount": 1500,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "06:00:00",
+        "To": "21:00:00",
+        "RequestsCountCoefficient": 0.8
+      },
+      {
+        "From": "21:00:01",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.1
+      }
+    ]
+  },
+  {
+    "Name": "Stop48",
+    "DailyRequestsCount": 3000,
+    "TimePeriods": [
+      {
+        "From": "00:00:00",
+        "To": "05:59:59",
+        "RequestsCountCoefficient": 0.05
+      },
+      {
+        "From": "06:00:00",
+        "To": "09:59:59",
+        "RequestsCountCoefficient": 0.25
+      },
+      {
+        "From": "10:00:00",
+        "To": "12:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "13:00:00",
+        "To": "14:59:59",
+        "RequestsCountCoefficient": 0.2
+      },
+      {
+        "From": "15:00:00",
+        "To": "16:59:59",
+        "RequestsCountCoefficient": 0.1
+      },
+      {
+        "From": "17:00:00",
+        "To": "19:59:59",
+        "RequestsCountCoefficient": 0.25
+      },
+      {
+        "From": "20:00:00",
+        "To": "23:59:59",
+        "RequestsCountCoefficient": 0.05
+      }
+    ]
+  }
+]

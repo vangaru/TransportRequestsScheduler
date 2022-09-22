@@ -1,6 +1,8 @@
-﻿namespace BSTU.RequestsScheduler.Interactor.Models
+﻿using Newtonsoft.Json;
+
+namespace BSTU.RequestsScheduler.Interactor.Models
 {
-    public class Request
+    public class Request : IComparable<Request>, IComparable
     {
         private string? _id;
         private string? _sourceBusStopName;
@@ -27,5 +29,24 @@
         public int SeatsCount { get; set; }
 
         public DateTime DateTime { get; set; }
+
+        public int CompareTo(object? obj)
+        {
+            return obj is Request request 
+                ? CompareTo(request) 
+                : throw new ArgumentException(nameof(obj));
+        }
+
+        public int CompareTo(Request? other)
+        {
+            return other != null
+                ? DateTime.TimeOfDay.CompareTo(other.DateTime.TimeOfDay)
+                : throw new ArgumentNullException(nameof(other));
+        }
+
+        public override string ToString()
+        {
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
+        }
     }
 }

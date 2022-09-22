@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interactor", "BSTU\Requests
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interactor.Tests", "BSTU\RequestsScheduler\Interactor\Tests\Interactor.Tests.csproj", "{8A88FE27-94E5-4F60-AC80-3D2D48C5212C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration", "BSTU\RequestsScheduler\Configuration\Configuration.csproj", "{CBC3A9EE-F3A9-4568-9A68-6A63C1B5571B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configuration", "BSTU\RequestsScheduler\Configuration\Configuration.csproj", "{CBC3A9EE-F3A9-4568-9A68-6A63C1B5571B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configuration.Tests", "BSTU\RequestsScheduler\Configuration\Tests\Configuration.Tests.csproj", "{F6893F47-02B0-40C9-8BC0-AB34409B3553}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker", "BSTU\RequestsScheduler\Worker\Worker.csproj", "{C3147DC9-5FFA-4293-8AF2-57CD49D6F7B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F6893F47-02B0-40C9-8BC0-AB34409B3553}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6893F47-02B0-40C9-8BC0-AB34409B3553}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6893F47-02B0-40C9-8BC0-AB34409B3553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3147DC9-5FFA-4293-8AF2-57CD49D6F7B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3147DC9-5FFA-4293-8AF2-57CD49D6F7B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3147DC9-5FFA-4293-8AF2-57CD49D6F7B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3147DC9-5FFA-4293-8AF2-57CD49D6F7B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

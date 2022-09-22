@@ -29,16 +29,28 @@ namespace BSTU.RequestsScheduler.Interactor.Interactors
                 var requests = new BlockingCollection<Request>();
                 Parallel.ForEach(_configuration.Configuration, busStop =>
                 {
-                    int requestsCount = _requestsCountProvider.GetRequestsCountForCurrentPeriod(busStop.Name);
-                    for (var i = 0; i < requestsCount; i++)
+                    IEnumerable<Request> busStopRequests = GetRequestsFor(busStop.Name);
+                    foreach (Request request in busStopRequests)
                     {
-                        Request request = _requestFactory.Create(busStop.Name);
                         requests.Add(request);
                     }
                 });
                 requests.CompleteAdding();
                 return requests;
             }
+        }
+
+        public IEnumerable<Request> GetRequestsFor(string busStopName)
+        {
+            int requestsCount = _requestsCountProvider.GetRequestsCountForCurrentPeriod(busStopName);
+            var requests = new List<Request>(requestsCount);
+            for (var _ = 0; _ < requestsCount; _++)
+            {
+                Request request = _requestFactory.Create(busStopName);
+                requests.Add(request);
+            }
+
+            return requests;
         }
     }
 }
