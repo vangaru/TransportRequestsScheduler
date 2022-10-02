@@ -1,4 +1,3 @@
-using BSTU.RequestsScheduler.Interactor.Configuration;
 using BSTU.RequestsScheduler.Interactor.Models;
 using BSTU.RequestsScheduler.Interactor.Presentators;
 using BSTU.RequestsScheduler.Worker.Loggers;
@@ -70,9 +69,12 @@ namespace Worker
                             {
                                 if (request != null)
                                 {
-                                    _requestsScheduler.Schedule(request);
-                                    submittedRequestsCount++;
-                                    requestInfo = request;
+                                    await _requestsScheduler.ScheduleAsync(request)
+                                        .ContinueWith((_) =>
+                                        {
+                                            submittedRequestsCount++;
+                                            requestInfo = request;
+                                        });
                                 }
                             }
                             else
@@ -83,6 +85,10 @@ namespace Worker
                                 initialRequestsCount = requests.Count;
                                 submittedRequestsCount = 0;
                             }
+                        }
+                        catch (AggregateException e)
+                        {
+                            _logger.LogError(e.InnerException, e.InnerException?.Message);
                         }
                         catch (Exception e)
                         {

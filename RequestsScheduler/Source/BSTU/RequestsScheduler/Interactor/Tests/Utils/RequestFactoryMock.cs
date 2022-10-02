@@ -15,7 +15,6 @@ namespace BSTU.RequestsScheduler.Interactor.Tests.Utils
 
             return new Request
             {
-                Id = Guid.NewGuid().ToString(),
                 SourceBusStopName = busStopName,
                 DestinationBusStopName = busStopIndex == ConfigurationMock.BusStopNames.Count - 1
                                             ? ConfigurationMock.BusStopNames[busStopIndex - 1]

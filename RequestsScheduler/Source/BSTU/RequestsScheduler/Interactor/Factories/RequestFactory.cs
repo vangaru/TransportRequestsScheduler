@@ -20,7 +20,6 @@ namespace BSTU.RequestsScheduler.Interactor.Factories
         {
             var request = new Request
             {
-                Id = Guid.NewGuid().ToString().ToUpper(),
                 SourceBusStopName = busStopName,
                 DestinationBusStopName = GetDestinationBusStopName(busStopName),
                 SeatsCount = _random.Next(MinSeatsCount, MaxSeatsCount + 1),

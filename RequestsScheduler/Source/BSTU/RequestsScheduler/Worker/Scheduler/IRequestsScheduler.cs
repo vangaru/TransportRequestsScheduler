@@ -4,6 +4,6 @@ namespace BSTU.RequestsScheduler.Worker.Scheduler
 {
     public interface IRequestsScheduler
     {
-        public void Schedule(Request request);
+        public Task ScheduleAsync(Request request);
     }
 }

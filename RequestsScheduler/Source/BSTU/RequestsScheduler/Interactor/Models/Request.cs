@@ -4,15 +4,8 @@ namespace BSTU.RequestsScheduler.Interactor.Models
 {
     public class Request : IComparable<Request>, IComparable
     {
-        private string? _id;
         private string? _sourceBusStopName;
         private string? _destinationBusStopName;
-
-        public string Id 
-        { 
-            get => _id ?? throw new ApplicationException($"{nameof(Id)} is required."); 
-            set => _id = value; 
-        }
 
         public string SourceBusStopName
         {
