@@ -1,9 +1,9 @@
-﻿using BSTU.RequestsServer.Api.Models;
+﻿using BSTU.RequestsServer.Domain.Models;
 
 namespace BSTU.RequestsServer.Api.Handlers
 {
     public interface IRequestsHandler
     {
-        public Task HandleRequest(Request request);
+        public void HandleRequest(Request request);
     }
 }

@@ -1,7 +1,7 @@
 ﻿using BSTU.RequestsServer.Api.Handlers;
-using BSTU.RequestsServer.Api.Models;
 using BSTU.RequestsServer.Api.ResponseModels;
 using BSTU.RequestsServer.Domain.Exceptions;
+using BSTU.RequestsServer.Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
@@ -25,9 +25,9 @@ namespace BSTU.RequestsServer.Api.Controllers
         [HttpPost]
         [ProducesResponseType(typeof(Request), 200)]
         [ProducesResponseType(typeof(ErrorResponse), 400)]
-        public async Task<ActionResult<Request>> PostRequest(Request request)
+        public ActionResult<Request> PostRequest(Request request)
         {
-            await _requestsHandler.HandleRequest(request);
+            _requestsHandler.HandleRequest(request);
             return Ok(request);
         }
 

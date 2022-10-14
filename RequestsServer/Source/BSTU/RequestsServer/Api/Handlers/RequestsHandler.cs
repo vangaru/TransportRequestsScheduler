@@ -1,23 +1,22 @@
-﻿using BSTU.RequestsServer.Api.Models;
-using BSTU.RequestsServer.Domain.Transactions;
+﻿using BSTU.RequestsServer.Domain.Models;
+using BSTU.RequestsServer.Domain.RabbitMQ;
 
 namespace BSTU.RequestsServer.Api.Handlers
 {
     public class RequestsHandler : IRequestsHandler
     {
         private readonly ILogger<RequestsHandler> _logger;
-        private readonly IRequestTransactionCommiter _transactionCommiter;
+        private readonly IRabbitMQClientWrapper _rabbitMqClient;
 
-        public RequestsHandler(ILogger<RequestsHandler> logger, IRequestTransactionCommiter transactionCommiter)
+        public RequestsHandler(ILogger<RequestsHandler> logger, IRabbitMQClientWrapper rabbitMqClient)
         {
             _logger = logger;
-            _transactionCommiter = transactionCommiter;
+            _rabbitMqClient = rabbitMqClient;
         }
 
-        public async Task HandleRequest(Request request)
+        public void HandleRequest(Request request)
         {
-
-            await _transactionCommiter.CommitTransactionAsync(request);
+            _rabbitMqClient.Send(request);
             _logger.LogInformation(request.ToString());
         }
     }
