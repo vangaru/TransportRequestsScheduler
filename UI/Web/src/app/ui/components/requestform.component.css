@@ -1,0 +1,97 @@
+body {
+    margin: 0 auto;
+
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 1.5;
+    color: #eee;
+
+    background: #fff;
+}
+
+.form {
+    margin: 20px auto;
+    width: 700px;
+    padding: 65px;
+
+    background-color: #eee;
+
+    background: #2e2e2e;
+    border: 1px solid #cecece;
+
+    color: white;
+
+    border-radius: 1em;
+
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.source {
+    display: flex;
+    padding: 10px 10px;
+    width: 200px;
+    margin-bottom: 15px;
+
+    background-color: #fff;
+    border: 1px solid #ccc;
+
+    font-family: inherit;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.destination {
+    display: flex;
+    padding: 10px 10px;
+    width: 200px;
+    margin-bottom: 15px;
+
+    background-color: #fff;
+    border: 1px solid #ccc;
+
+    font-family: inherit;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.seatsCount {
+    display: flex;
+    padding: 10px 10px;
+    width: 100px;
+    margin-bottom: 15px;
+
+    background-color: #fff;
+    border: 1px solid #ccc;
+
+    font-family: inherit;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 10px;
+
+    font-size: 15px;
+
+    border: 1px solid #2e2e2e;
+    border-radius: 5px;
+    background-color: #fff;
+
+    color: #121212;
+
+}
+
+.btn:hover {
+    background-color: #ccc;
+}
+
+.btn-div {
+    float: right;
+}

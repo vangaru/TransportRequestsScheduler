@@ -16,6 +16,10 @@ namespace BSTU.RequestsServer.Api.Handlers
 
         public void HandleRequest(Request request)
         {
+            if (request.DateTime == default(DateTime))
+            {
+                request.DateTime = DateTime.Now;
+            }
             _rabbitMqClient.Send(request);
             _logger.LogInformation(request.ToString());
         }

@@ -1,0 +1,4 @@
+{
+    "requestsServerUrl": "https://localhost:44355/",
+    "requestsEndpoint": "api/requests"
+}

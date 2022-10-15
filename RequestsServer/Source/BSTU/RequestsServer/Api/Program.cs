@@ -42,7 +42,7 @@ namespace BSTU.RequestsServer.Api
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader());
 
             app.MapControllers();
 

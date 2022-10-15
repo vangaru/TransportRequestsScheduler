@@ -1,0 +1,26 @@
+<form>
+    <div>
+        <div class="form">
+            <div class="inputs">
+                <div class="form-group">
+                    <label for="sourceBusStopName">Откуда: </label>
+                    <input class="source" type="text" name="sourceBusStopName" 
+                        id="sourceBusStopName" required [(ngModel)]="request.sourceBusStopName" />
+                </div>
+                <div>
+                    <label for="destinationBusStopName">Куда: </label>
+                    <input class="destination" type="text" name="destinationBusStopName" 
+                        id="destinationBusStopName" required [(ngModel)]="request.destinationBusStopName" />
+                </div>
+                <div>
+                    <label for="seatsCount">Кол-во мест: </label>
+                    <input class="seatsCount" type="number" name="seatsCount" 
+                        id="seatsCount" min="1" max="3" required [(ngModel)]="request.seatsCount" />
+                </div>
+            </div>
+            <div class="btn-div">
+                <button class="btn" type="submit" (click)="submitRequest()">Отправить</button>
+            </div>
+        </div>
+    </div>
+</form>
