@@ -13,6 +13,7 @@ namespace BSTU.RequestsProcessor.Domain.RabbitMQ
 
         private readonly RabbitMQConfiguration _rabbitMQConfiguration;
         private readonly IRequestsProcessor _requestsProcessor;
+        private readonly IFaultedRequestsCountLogger _faultedRequestsCountLogger;
         private readonly ILogger<MessageJobsHandler> _logger;
 
         private IConnection? _connection;
@@ -22,11 +23,13 @@ namespace BSTU.RequestsProcessor.Domain.RabbitMQ
         public MessageJobsHandler(
             IOptions<RabbitMQConfiguration> rabbitMQOptions, 
             IRequestsProcessor requestsProcessor,
-            ILogger<MessageJobsHandler> logger)
+            ILogger<MessageJobsHandler> logger,
+            IFaultedRequestsCountLogger faultedRequestsCountLogger)
         {
             _rabbitMQConfiguration = rabbitMQOptions.Value;
             _requestsProcessor = requestsProcessor;
             _logger = logger;
+            _faultedRequestsCountLogger = faultedRequestsCountLogger;
         }
 
         public void Setup()
@@ -64,11 +67,11 @@ namespace BSTU.RequestsProcessor.Domain.RabbitMQ
                 .ContinueWith(task => FinishHandleProcess(task, eventArgs, requestContents));
         }
 
-        private void FinishHandleProcess(Task handleProcessTask, BasicDeliverEventArgs deliveryArgs, string requestContents)
+        private async Task FinishHandleProcess(Task handleProcessTask, BasicDeliverEventArgs deliveryArgs, string requestContents)
         {
             if (handleProcessTask.IsFaulted)
             {
-                FinishFaultedHandleProcess(handleProcessTask.Exception, deliveryArgs, requestContents);
+                await FinishFaultedHandleProcess(handleProcessTask.Exception, deliveryArgs, requestContents);
             }
             else
             {
@@ -76,7 +79,7 @@ namespace BSTU.RequestsProcessor.Domain.RabbitMQ
             }
         }
 
-        private void FinishFaultedHandleProcess(AggregateException? exception, BasicDeliverEventArgs deliveryArgs, string requestContents)
+        private async Task FinishFaultedHandleProcess(AggregateException? exception, BasicDeliverEventArgs deliveryArgs, string requestContents)
         {
             _logger.LogInformation($"Failed to process request:\n {requestContents}");
 
@@ -90,6 +93,7 @@ namespace BSTU.RequestsProcessor.Domain.RabbitMQ
             }
 
             Channel.BasicNack(deliveryArgs.DeliveryTag, multiple: false, requeue: false);
+            await _faultedRequestsCountLogger.IncrementFaultedRequestsCountAsync();
         }
 
         private void FinishSuccessfulHandleProcess(BasicDeliverEventArgs deliveryArgs, string requestContents)

@@ -28,6 +28,7 @@ namespace BSTU.RequestsProcessor.Processor
                     services.AddSingleton<IRequestsRepository, RequestsRepository>();
                     services.AddSingleton<IRequestsProcessor, Domain.Processors.RequestsProcessor>();
                     services.AddSingleton<IMessageJobsHandler, MessageJobsHandler>();
+                    services.AddSingleton<IFaultedRequestsCountLogger, FaultedRequestsCountLogger>();
                     services.Configure<RabbitMQConfiguration>(hostContext.Configuration.GetSection(nameof(RabbitMQConfiguration)));
                     services.AddHostedService<Worker>();
                 })

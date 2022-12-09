@@ -27,7 +27,7 @@ namespace BSTU.RequestsScheduler.Worker.Loggers
             var statisticsBuilder = new StringBuilder();
             statisticsBuilder
                 .AppendLine($"Statistics for {busStopName}")
-                .Append($"for time interval from {from} to {to}")
+                .Append($"for time interval from {from.ToString()} to {to.ToString()}")
                 .AppendLine($"Expected number of requests: {expectedRequestsCount}")
                 .AppendLine($"Actual number of requests: {actualSubmittedRequestsCount}");
 
