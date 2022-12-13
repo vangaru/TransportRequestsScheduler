@@ -6,7 +6,6 @@ using BSTU.RequestsScheduler.Interactor.Interactors;
 using BSTU.RequestsScheduler.Interactor.Presentators;
 using BSTU.RequestsScheduler.Interactor.Providers;
 using BSTU.RequestsScheduler.Worker.Configuration;
-using BSTU.RequestsScheduler.Worker.Loggers;
 using BSTU.RequestsScheduler.Worker.Scheduler;
 using Serilog;
 using Serilog.Core;
@@ -45,10 +44,9 @@ namespace Worker
                     services.AddSingleton<IEnumerable<IRequestConfigurationValidator>>(validators);
                     services.AddSingleton<IRequestConfigurationValidator, RequestConfigurationValidator>();
                     services.AddSingleton<IRequestConfigurationProxy, RequestConfiguration>();
-                    services.AddSingleton<IStatisticsLogger, StatisticsLogger>();
+                    services.AddSingleton<IReasonsForTravelProxy, ReasonsForTravelProvider>();
                     services.AddHttpClient<IRequestsScheduler, RequestsScheduler>();
                     services.Configure<RequestsServerConfiguration>(hostContext.Configuration.GetSection(nameof(RequestsServerConfiguration)));
-                    services.Configure<ConfigurationResource>(hostContext.Configuration.GetSection(nameof(ConfigurationResource)));
                     services.AddHostedService<Worker>();
                 })
                 .Build();

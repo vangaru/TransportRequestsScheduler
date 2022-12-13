@@ -15,6 +15,10 @@ namespace BSTU.RequestsProcessor.Domain.Processors
         public async Task IncrementFaultedRequestsCountAsync()
         {
             string fileContents = await File.ReadAllTextAsync(_path);
+            if (string.IsNullOrWhiteSpace(fileContents))
+            {
+                await File.WriteAllTextAsync(_path, 1.ToString());
+            }
             int currentCount = int.Parse(fileContents);
             await File.WriteAllTextAsync(_path, (++currentCount).ToString());
         }

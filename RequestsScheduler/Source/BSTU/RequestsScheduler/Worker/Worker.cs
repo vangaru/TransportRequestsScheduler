@@ -1,6 +1,5 @@
 using BSTU.RequestsScheduler.Interactor.Models;
 using BSTU.RequestsScheduler.Interactor.Presentators;
-using BSTU.RequestsScheduler.Worker.Loggers;
 using BSTU.RequestsScheduler.Worker.Scheduler;
 
 namespace Worker
@@ -8,7 +7,6 @@ namespace Worker
     public class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
-        private readonly IStatisticsLogger _statisticsLogger;
         private readonly IRequestsPresentator _requestsPresentator;
         private readonly IRequestsScheduler _requestsScheduler;
 
@@ -17,11 +15,9 @@ namespace Worker
         public Worker(
             IRequestsPresentator requestsPresentator, 
             ILogger<Worker> logger, 
-            IStatisticsLogger statisticsLogger, 
             IRequestsScheduler requestsScheduler)
         {
             _logger = logger;
-            _statisticsLogger = statisticsLogger;
             _requestsPresentator = requestsPresentator;
             _requestsScheduler = requestsScheduler;
         }
@@ -57,10 +53,6 @@ namespace Worker
             {
                 if (requestInfo != null)
                 {
-                    var submittedRequestsCount = 0;
-                    int initialRequestsCount = requests.Count;
-                    TimeSpan firstRequestTimeOfDay = requestInfo.DateTime.TimeOfDay;
-
                     while (!stoppingToken.IsCancellationRequested)
                     {
                         try
@@ -69,21 +61,12 @@ namespace Worker
                             {
                                 if (request != null)
                                 {
-                                    await _requestsScheduler.ScheduleAsync(request)
-                                        .ContinueWith((_) =>
-                                        {
-                                            submittedRequestsCount++;
-                                            requestInfo = request;
-                                        });
+                                    await _requestsScheduler.ScheduleAsync(request);
                                 }
                             }
                             else
                             {
-                                await _statisticsLogger.LogAsync(firstRequestTimeOfDay, requestInfo.DateTime.TimeOfDay, 
-                                    requestInfo.SourceBusStopName, initialRequestsCount, submittedRequestsCount);
-                                requests = _requestsPresentator.GetRequestQueueForBusStop(requestInfo.SourceBusStopName);
-                                initialRequestsCount = requests.Count;
-                                submittedRequestsCount = 0;
+                                _logger.LogWarning("Failed to retrieve request from the queue.");
                             }
                         }
                         catch (AggregateException e)

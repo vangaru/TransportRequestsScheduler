@@ -8,6 +8,7 @@ namespace BSTU.RequestsServer.Domain.Models
     {
         private string? _sourceBusStopName;
         private string? _destinationBusStopName;
+        private string? _reasonForTravel;
 
         [Required]
         public string SourceBusStopName
@@ -27,6 +28,13 @@ namespace BSTU.RequestsServer.Domain.Models
 
         [Required]
         public DateTime DateTime { get; set; }
+
+        [Required]
+        public string ReasonForTravel 
+        {
+            get => _reasonForTravel ?? throw new RequestsServerException($"{nameof(ReasonForTravel)} is required."); 
+            set => _reasonForTravel = value;
+        }
 
         public override string ToString()
         {

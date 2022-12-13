@@ -1,4 +1,5 @@
 using BSTU.RequestsServer.Api.Handlers;
+using BSTU.RequestsServer.Domain.Providers;
 using BSTU.RequestsServer.Domain.RabbitMQ;
 using Serilog;
 
@@ -25,6 +26,8 @@ namespace BSTU.RequestsServer.Api
 
             builder.Services.AddScoped<IRabbitMQClientWrapper, RabbitMQClientWrapper>();
             builder.Services.AddScoped<IRequestsHandler, RequestsHandler>();
+            builder.Services.AddScoped<IReasonsForTravelProvider, ReasonsForTravelProvider>();
+            builder.Services.AddScoped<IBusStopNamesProvider, BusStopNamesProvider>();
             builder.Services.Configure<RabbitMQConfiguration>(builder.Configuration.GetSection(nameof(RabbitMQConfiguration)));
 
             var app = builder.Build();

@@ -24,6 +24,7 @@ namespace BSTU.RequestsScheduler.Worker.Loggers
         private string GetStatistics(TimeSpan from, TimeSpan to, string busStopName,
             int expectedRequestsCount, int actualSubmittedRequestsCount)
         {
+            return String.Empty;
             var statisticsBuilder = new StringBuilder();
             statisticsBuilder
                 .AppendLine($"Statistics for {busStopName}")

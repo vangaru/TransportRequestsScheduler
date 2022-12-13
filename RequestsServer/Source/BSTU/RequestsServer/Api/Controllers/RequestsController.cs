@@ -2,6 +2,7 @@
 using BSTU.RequestsServer.Api.ResponseModels;
 using BSTU.RequestsServer.Domain.Exceptions;
 using BSTU.RequestsServer.Domain.Models;
+using BSTU.RequestsServer.Domain.Providers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
@@ -15,11 +16,19 @@ namespace BSTU.RequestsServer.Api.Controllers
     {
         private readonly IRequestsHandler _requestsHandler;
         private readonly ILogger<RequestsController> _logger;
+        private readonly IBusStopNamesProvider _busStopNamesProvider;
+        private readonly IReasonsForTravelProvider _reasonsForTravelProvider;
 
-        public RequestsController(IRequestsHandler requestsHandler, ILogger<RequestsController> logger)
+        public RequestsController(
+            IRequestsHandler requestsHandler, 
+            ILogger<RequestsController> logger,
+            IBusStopNamesProvider busStopNamesProvider, 
+            IReasonsForTravelProvider reasonsForTravelProvider)
         {
             _requestsHandler = requestsHandler;
             _logger = logger;
+            _busStopNamesProvider = busStopNamesProvider;
+            _reasonsForTravelProvider = reasonsForTravelProvider;
         }
 
         [HttpPost]
@@ -29,6 +38,24 @@ namespace BSTU.RequestsServer.Api.Controllers
         {
             _requestsHandler.HandleRequest(request);
             return Ok(request);
+        }
+
+        [HttpGet]
+        [ProducesResponseType(typeof(List<string>), 200)]
+        [ProducesResponseType(typeof(ErrorResponse), 400)]
+        [Route("busstops")]
+        public ActionResult<List<string>> GetBusStops()
+        {
+            return Ok(_busStopNamesProvider.BusStopNames);
+        }
+
+        [HttpGet]
+        [ProducesResponseType(typeof(List<string>), 200)]
+        [ProducesResponseType(typeof(ErrorResponse), 400)]
+        [Route("reasonsfortravel")]
+        public ActionResult<List<string>> GetReasonsForTravel()
+        {
+            return Ok(_reasonsForTravelProvider.ReasonsForTravel);
         }
 
         [Route("error")]

@@ -24,7 +24,7 @@ namespace BSTU.RequestsProcessor.Processor
                 {
                     string connectionString = hostContext.Configuration.GetConnectionString(ConnectionString);
                     services.AddDbContext<RequestsProcessorContext>(options 
-                        => options.UseNpgsql(connectionString), ServiceLifetime.Singleton);
+                        => options.UseNpgsql(connectionString, opts => opts.MigrationsAssembly("Domain")), ServiceLifetime.Singleton);
                     services.AddSingleton<IRequestsRepository, RequestsRepository>();
                     services.AddSingleton<IRequestsProcessor, Domain.Processors.RequestsProcessor>();
                     services.AddSingleton<IMessageJobsHandler, MessageJobsHandler>();

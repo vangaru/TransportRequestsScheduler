@@ -8,12 +8,14 @@ namespace BSTU.RequestsScheduler.Interactor.Factories
         private const int MinSeatsCount = 1;
         private const int MaxSeatsCount = 3;
 
-        private readonly IRequestConfigurationProxy _configurationProxy;
+        private readonly IRequestConfigurationProxy _requestsConfigurationProxy;
+        private readonly IReasonsForTravelProxy _reasonsForTravelProxy;
         private readonly Random _random = new();
 
-        public RequestFactory(IRequestConfigurationProxy configuration)
+        public RequestFactory(IRequestConfigurationProxy requestsConfiguration, IReasonsForTravelProxy reasonsForTravel)
         {
-            _configurationProxy = configuration;
+            _requestsConfigurationProxy = requestsConfiguration;
+            _reasonsForTravelProxy = reasonsForTravel;
         }
 
         public Request Create(string busStopName)
@@ -23,7 +25,8 @@ namespace BSTU.RequestsScheduler.Interactor.Factories
                 SourceBusStopName = busStopName,
                 DestinationBusStopName = GetDestinationBusStopName(busStopName),
                 SeatsCount = _random.Next(MinSeatsCount, MaxSeatsCount + 1),
-                DateTime = GetDateTime(busStopName)
+                DateTime = GetDateTime(busStopName),
+                ReasonForTravel = GetReasonForTravel()
             };
 
             return request;
@@ -32,14 +35,14 @@ namespace BSTU.RequestsScheduler.Interactor.Factories
         private string GetDestinationBusStopName(string sourceBusStopName)
         {
             int destinationBusStopIndex = GetDestinationBusStopIndex(sourceBusStopName);
-            return _configurationProxy.Configuration.ElementAt(destinationBusStopIndex).Name;
+            return _requestsConfigurationProxy.Configuration.ElementAt(destinationBusStopIndex).Name;
         }
 
         private int GetDestinationBusStopIndex(string sourceBusStopName)
         {
-            int randomBusStopNameIndex = _random.Next(_configurationProxy.Configuration.Count());
+            int randomBusStopNameIndex = _random.Next(_requestsConfigurationProxy.Configuration.Count());
             return BusStopsEqual(sourceBusStopName, randomBusStopNameIndex)
-                ? randomBusStopNameIndex >= _configurationProxy.Configuration.Count()
+                ? randomBusStopNameIndex >= _requestsConfigurationProxy.Configuration.Count()
                     ? --randomBusStopNameIndex
                     : ++randomBusStopNameIndex
                 : randomBusStopNameIndex;
@@ -47,7 +50,7 @@ namespace BSTU.RequestsScheduler.Interactor.Factories
 
         private bool BusStopsEqual(string sourceBusStopName, int destinationBusStopIndex)
         {
-            return _configurationProxy.Configuration.ToList()
+            return _requestsConfigurationProxy.Configuration.ToList()
                 .IndexOf(GetBusStopByName(sourceBusStopName)) == destinationBusStopIndex;
         }
 
@@ -63,7 +66,12 @@ namespace BSTU.RequestsScheduler.Interactor.Factories
 
         private BusStopConfiguration GetBusStopByName(string busStopName)
         {
-            return _configurationProxy.Configuration.First(busStop => string.Compare(busStopName, busStop.Name) == 0);
+            return _requestsConfigurationProxy.Configuration.First(busStop => string.Compare(busStopName, busStop.Name) == 0);
+        }
+
+        private string GetReasonForTravel()
+        {
+            return _reasonsForTravelProxy.ReasonsForTravel[_random.Next(0, _reasonsForTravelProxy.ReasonsForTravel.Count() - 1)];
         }
     }
 }
