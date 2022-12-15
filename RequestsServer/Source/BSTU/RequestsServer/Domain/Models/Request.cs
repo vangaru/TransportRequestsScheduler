@@ -26,7 +26,6 @@ namespace BSTU.RequestsServer.Domain.Models
         [Required]
         public int SeatsCount { get; set; }
 
-        [Required]
         public DateTime DateTime { get; set; }
 
         [Required]
