@@ -13,13 +13,16 @@ namespace BSTU.RequestsScheduler.Interactor.Tests.Factories
         private const int MaxSeatsCount = 3;
 
         private readonly Mock<IRequestConfigurationProxy> _configuration;
+        private readonly Mock<IReasonsForTravelProxy> _reasonsForTravelProxy;
         private readonly IRequestFactory _requestFactory;
         
         public RequestFactoryTests()
         {
             _configuration = new Mock<IRequestConfigurationProxy>();
             _configuration.Setup(c => c.Configuration).Returns(ConfigurationMock.Configuration);
-            _requestFactory = new RequestFactory(_configuration.Object);
+            _reasonsForTravelProxy = new Mock<IReasonsForTravelProxy>();
+            _reasonsForTravelProxy.Setup(r => r.ReasonsForTravel).Returns(new List<string>());
+            _requestFactory = new RequestFactory(_configuration.Object, _reasonsForTravelProxy.Object);
         }
 
         [Theory]

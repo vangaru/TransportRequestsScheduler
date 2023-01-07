@@ -10,7 +10,7 @@ using BSTU.RequestsScheduler.Worker.Scheduler;
 using Serilog;
 using Serilog.Core;
 
-namespace Worker
+namespace BSTU.RequestsScheduler.Worker
 {
     internal static class Program
     {
@@ -45,7 +45,7 @@ namespace Worker
                     services.AddSingleton<IRequestConfigurationValidator, RequestConfigurationValidator>();
                     services.AddSingleton<IRequestConfigurationProxy, RequestConfiguration>();
                     services.AddSingleton<IReasonsForTravelProxy, ReasonsForTravelProvider>();
-                    services.AddHttpClient<IRequestsScheduler, RequestsScheduler>();
+                    services.AddHttpClient<IRequestsScheduler, Scheduler.RequestsScheduler>();
                     services.Configure<RequestsServerConfiguration>(hostContext.Configuration.GetSection(nameof(RequestsServerConfiguration)));
                     services.AddHostedService<Worker>();
                 })

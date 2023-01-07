@@ -11,19 +11,19 @@ namespace BSTU.RequestsScheduler.Interactor.Models
         public string SourceBusStopName
         {
             get => _sourceBusStopName ?? throw new ApplicationException($"{nameof(SourceBusStopName)} is required.");
-            internal set => _sourceBusStopName = value;
+            set => _sourceBusStopName = value;
         }
 
         public string DestinationBusStopName
         {
             get => _destinationBusStopName ?? throw new ApplicationException($"{nameof(DestinationBusStopName)} is required.");
-            internal set => _destinationBusStopName = value;
+            set => _destinationBusStopName = value;
         }
 
         public string ReasonForTravel
         {
             get => _reasonForTravel ?? throw new ApplicationException($"{nameof(ReasonForTravel)} is required.");
-            internal set => _reasonForTravel = value;
+            set => _reasonForTravel = value;
         }
 
         public int SeatsCount { get; set; }

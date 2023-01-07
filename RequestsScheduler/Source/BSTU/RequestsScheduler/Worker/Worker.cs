@@ -2,7 +2,7 @@ using BSTU.RequestsScheduler.Interactor.Models;
 using BSTU.RequestsScheduler.Interactor.Presentators;
 using BSTU.RequestsScheduler.Worker.Scheduler;
 
-namespace Worker
+namespace BSTU.RequestsScheduler.Worker
 {
     public class Worker : BackgroundService
     {
@@ -49,34 +49,28 @@ namespace Worker
 
         private async Task ScheduleRequestsAsync(Queue<Request> requests, CancellationToken stoppingToken)
         {
-            if (requests.TryPeek(out Request? requestInfo))
+            if (requests.TryPeek(out Request? _))
             {
-                if (requestInfo != null)
+                while (!stoppingToken.IsCancellationRequested)
                 {
-                    while (!stoppingToken.IsCancellationRequested)
+                    try
                     {
-                        try
+                        if (requests.TryDequeue(out Request? request))
                         {
-                            if (requests.TryDequeue(out Request? request))
-                            {
-                                if (request != null)
-                                {
-                                    await _requestsScheduler.ScheduleAsync(request);
-                                }
-                            }
-                            else
-                            {
-                                _logger.LogWarning("Failed to retrieve request from the queue.");
-                            }
+                            await _requestsScheduler.ScheduleAsync(request);
                         }
-                        catch (AggregateException e)
+                        else
                         {
-                            _logger.LogError(e.InnerException, e.InnerException?.Message);
+                            _logger.LogWarning("Failed to retrieve request from the queue.");
                         }
-                        catch (Exception e)
-                        {
-                            _logger.LogError(e, e.Message);
-                        }
+                    }
+                    catch (AggregateException e)
+                    {
+                        _logger.LogError(e.InnerException, e.InnerException?.Message);
+                    }
+                    catch (Exception e)
+                    {
+                        _logger.LogError(e, e.Message);
                     }
                 }
             }

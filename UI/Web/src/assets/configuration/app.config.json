@@ -1,4 +1,4 @@
 {
-    "requestsServerUrl": "https://localhost:44355/",
+    "requestsServerUrl": "{RequestsServer URL}",
     "requestsEndpoint": "api/requests"
 }
